@@ -1,0 +1,20 @@
+[project]
+name = "data-project-dbt"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "Prajwal Bankar", email = "prajwal.bankar.18@gmail.com" }
+]
+requires-python = ">=3.14"
+dependencies = [
+    "dbt-core>=1.12.3",
+    "dbt-databricks>=1.10.9",
+]
+
+[project.scripts]
+data-project-dbt = "data_project_dbt:main"
+
+[build-system]
+requires = ["uv_build>=0.12.1,<0.13.0"]
+build-backend = "uv_build"
