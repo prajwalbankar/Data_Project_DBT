@@ -1,7 +1,7 @@
 {{
     config(
         materialized = 'incremental',
-        unique_key = 'order_id'
+        unique_key = 'product_id'
     )
 }}
 
@@ -9,7 +9,7 @@ SELECT
     *,
     current_timestamp() AS processed_at
 FROM 
-    {{ source('walmart_databricks', 'orders')}}
+    {{ source('walmart_databricks', 'products')}}
 WHERE 
     is_active = 'Y'
 
