@@ -11,8 +11,8 @@ SELECT
 FROM 
     {{ source('walmart_databricks', 'orders')}}
 WHERE 
-    is_active = 'Y'
-
+    1=1
+    
 {% if is_incremental() %}
     AND updated_timestamp > (SELECT COALESCE(MAX(updated_timestamp), '1900-01-01') FROM {{ this }})
 {% endif %}
